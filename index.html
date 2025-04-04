@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" type="image/png" href="C:\Users\Colibecas\Documents\Electrofix tecnology\programa web\logo 1.png">
+  <meta charset="UTF-8">
+  <title>Electrofixtecnology - Sistema Web</title>
+  <style>
+    body {
+      background-image: url('C:\Users\Colibecas\Documents\Electrofix tecnology\programa web\logo para flayer.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #1c1c1c;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 5px solid purple;
+    }
+    header img {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0;
+      color: #b266ff;
+      font-size: 26px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .card {
+      background-color: #1c1c1c;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.01);
+    }
+    h2 {
+      color: #00d4ff;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+    }
+    button {
+      margin-top: 15px;
+      background: #00d4ff;
+      color: #000;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #00aacc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+    th {
+      background-color: #222;
+    }
+    a.whatsapp {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    a.whatsapp:hover {
+      background: #1ebe5d;
+    }
+    .error {
+      border: 2px solid red !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="C:\Users\Colibecas\Documents\Electrofix tecnology\programa web\logo para flayer.png" alt="Logo Electrofix">
+    <h1>Electrofixtecnology - Sistema Web</h1>
+  </header>
+
+  <div class="container">
+    <!-- CONTENIDO COMPLETO -->
+
+    <!-- 🧾 Sección: Información del negocio -->
+    <div class="card">
+      <h2>Sobre Electrofixtecnology</h2>
+      <p>En Electrofixtecnology nos especializamos en brindar soluciones eficientes y personalizadas en mantenimiento y reparación de PC, consolas (PS4, PS5,Xbox SERIES) y controles🎮​.
+Además, apoyamos a estudiantes con el desarrollo profesional de proyectos universitarios🎮​.
+Nos enorgullece ofrecer un servicio rápido, accesible y de alta calidad, enfocado en la satisfacción de cada cliente.</p>
+    </div>
+
+    <!-- 📋 Registro de servicios -->
+    <div class="card">
+      <h2>Registrar nuevo cliente</h2>
+      <label>Nombre del cliente</label>
+      <input type="text" id="cliente">
+      <label>Tipo de equipo</label>
+      <select id="equipo">
+        <option>PC</option>
+        <option>Laptop</option>
+        <option>PS4</option>
+        <option>PS5</option>
+        <option>Control Xbox/Play</option>
+        <option>Otro</option>
+      </select>
+      <label>Descripción del problema</label>
+      <textarea id="problema"></textarea>
+      <label>Estado del servicio</label>
+      <select id="estado">
+        <option>Pendiente</option>
+        <option>En reparación</option>
+        <option>Terminado</option>
+        <option>Entregado</option>
+      </select>
+      <label>Costo estimado</label>
+      <input type="number" id="costo">
+      <button onclick="guardarRegistro()">Guardar registro</button>
+    </div>
+
+    <!-- 🎓 Registro de proyectos -->
+    <div class="card">
+      <h2>Registrar proyecto universitario</h2>
+      <label>Nombre del estudiante</label>
+      <input type="text" id="nombreEstudiante">
+      <label>Materia / Tema</label>
+      <input type="text" id="materiaTema">
+      <label>Fecha de entrega</label>
+      <input type="date" id="fechaEntrega">
+      <label>Costo del proyecto</label>
+      <input type="number" id="costoProyecto">
+      <button onclick="registrarProyecto()">Registrar proyecto</button>
+    </div>
+
+    <!-- 🗂️ Tablas -->
+    <div class="card">
+      <h2>Servicios registrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Equipo</th>
+            <th>Problema</th>
+            <th>Estado</th>
+            <th>Costo</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-servicios"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Proyectos registrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Estudiante</th>
+            <th>Materia / Tema</th>
+            <th>Fecha</th>
+            <th>Costo</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-proyectos"></tbody>
+      </table>
+    </div>
+
+    <!-- 💬 Botón de WhatsApp -->
+    <div style="text-align:center">
+      <a href="https://wa.me/5213121245353" target="_blank" class="whatsapp">💬 Escríbenos por WhatsApp</a>
+    </div>
+
+    <!-- 📧 Formulario de contacto -->
+    <div class="card">
+      <h2>Contáctanos</h2>
+      <label>Nombre</label>
+      <input type="text" id="nombreContacto">
+      <label>Correo</label>
+      <input type="email" id="correoContacto">
+      <label>Mensaje</label>
+      <textarea id="mensajeContacto" rows="4"></textarea>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a id="linkWA" target="_blank">
+          <button onclick="enviarContactoWhatsApp()">Enviar por WhatsApp</button>
+        </a>
+        <button onclick="enviarContactoCorreo()">Enviar por Correo</button>
+      </div>
+    </div>
+
+    <!-- 🧹 Botón de limpieza -->
+    <div style="text-align:center; padding: 30px">
+      <button onclick="limpiarTodo()" style="background:#ff4d4d; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">🗑️ Borrar todos los registros</button>
+    </div>
+
+    <!-- Botones para exportar y ver ingresos -->
+    <div style="text-align:center; padding: 30px">
+      <button onclick="descargarCSVServicios()">📥 Descargar Servicios CSV</button>
+      <button onclick="descargarCSVProyectos()">📥 Descargar Proyectos CSV</button>
+      <button onclick="mostrarTablaIngresosMensuales()">📊 Ver ingresos del mes</button>
+      <p id="ingresos-mensuales" style="margin-top: 15px; font-size: 18px; color: #00ff88;"></p>
+    </div>
+  </div>
+
+  <script>
+    function descargarCSVServicios() {
+      const servicios = JSON.parse(localStorage.getItem("servicios")) || [];
+      let csv = "Cliente,Equipo,Problema,Estado,Costo\n";
+      servicios.forEach(s => {
+        csv += `${s.cliente},${s.equipo},${s.problema},${s.estado},${s.costo}\n`;
+      });
+      const blob = new Blob([csv], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "servicios.csv";
+      a.click();
+    }
+
+    function descargarCSVProyectos() {
+      const proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
+      let csv = "Estudiante,Materia,Fecha,Costo\n";
+      proyectos.forEach(p => {
+        csv += `${p.estudiante},${p.materia},${p.fecha},${p.costo}\n`;
+      });
+      const blob = new Blob([csv], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "proyectos.csv";
+      a.click();
+    }
+
+    function mostrarTablaIngresosMensuales() {
+      const servicios = JSON.parse(localStorage.getItem("servicios")) || [];
+      const proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
+      let total = 0;
+
+      servicios.forEach(s => total += parseFloat(s.costo || 0));
+      proyectos.forEach(p => total += parseFloat(p.costo || 0));
+
+      document.getElementById("ingresos-mensuales").innerText = `💰 Ganancias del mes: $${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
