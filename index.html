@@ -31,7 +31,7 @@
       margin: 0;
       color: #b266ff;
       font-size: 26px;
-      animation: fadeIn 2s ease-in-out;
+      
     }
     .container {
       padding: 20px;
@@ -104,6 +104,9 @@
     .error {
       border: 2px solid red !important;
     }
+  
+      to { opacity: 1; transform: translateY(0); }
+    }
   @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -112,8 +115,8 @@
 </head>
 <body>
   <header>
-  <img src="logo 1.png" alt="Fondo vertical" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-  <h1>Electrofixtecnology - Sistema Web</h1>
+  
+  <h1 style="margin: 0; color: #b266ff; font-size: 26px; animation: fadeIn 2s ease-in-out;">Electrofixtecnology - Sistema Web</h1>
 </header>
 
   <div class="container">
