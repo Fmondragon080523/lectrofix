@@ -31,6 +31,7 @@
       margin: 0;
       color: #b266ff;
       font-size: 26px;
+      animation: fadeIn 2s ease-in-out;
     }
     .container {
       padding: 20px;
@@ -103,13 +104,17 @@
     .error {
       border: 2px solid red !important;
     }
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo para flayer.png" alt="Logo Electrofix">
-    <h1>Electrofixtecnology - Sistema Web</h1>
-  </header>
+  <img src="A_digital_graphic_design_background_features_a_dee.png" alt="Fondo vertical" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+  <h1>Electrofixtecnology - Sistema Web</h1>
+</header>
 
   <div class="container">
     <!-- CONTENIDO COMPLETO -->
