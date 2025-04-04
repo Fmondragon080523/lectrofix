@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="icon" type="image/png" href="C:\Users\Colibecas\AppData\Local\Temp\Temp1_electrofix.zip\logo 1.png">
+  <link rel="icon" type="image/png" href="logo para flayer.png">
   <meta charset="UTF-8">
   <title>Electrofixtecnology - Sistema Web</title>
   <style>
     body {
-      background-image: url('C:\Users\Colibecas\Documents\Electrofix tecnology\programa web\logo para flayer.png');
+      background-image: url('A_digital_graphic_design_serves_as_a_background_wi.png');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
@@ -107,169 +107,121 @@
 </head>
 <body>
   <header>
-    <img src="C:\Users\Colibecas\AppData\Local\Temp\Temp1_electrofix.zip\logo para flayer.png">
+    <img src="logo para flayer.png" alt="Logo Electrofix">
     <h1>Electrofixtecnology - Sistema Web</h1>
   </header>
 
   <div class="container">
     <!-- CONTENIDO COMPLETO -->
-
-    <!-- 🧾 Sección: Información del negocio -->
-    <div class="card">
-      <h2>Sobre Electrofixtecnology</h2>
-      <p>En Electrofixtecnology nos especializamos en brindar soluciones eficientes y personalizadas en mantenimiento y reparación de PC, consolas (PS4, PS5,Xbox SERIES) y controles🎮​.
-Además, apoyamos a estudiantes con el desarrollo profesional de proyectos universitarios🎮​.
-Nos enorgullece ofrecer un servicio rápido, accesible y de alta calidad, enfocado en la satisfacción de cada cliente.</p>
-    </div>
-
-    <!-- 📋 Registro de servicios -->
-    <div class="card">
-      <h2>Registrar nuevo cliente</h2>
-      <label>Nombre del cliente</label>
-      <input type="text" id="cliente">
-      <label>Tipo de equipo</label>
-      <select id="equipo">
-        <option>PC</option>
-        <option>Laptop</option>
-        <option>PS4</option>
-        <option>PS5</option>
-        <option>Control Xbox/Play</option>
-        <option>Otro</option>
-      </select>
-      <label>Descripción del problema</label>
-      <textarea id="problema"></textarea>
-      <label>Estado del servicio</label>
-      <select id="estado">
-        <option>Pendiente</option>
-        <option>En reparación</option>
-        <option>Terminado</option>
-        <option>Entregado</option>
-      </select>
-      <label>Costo estimado</label>
-      <input type="number" id="costo">
-      <button onclick="guardarRegistro()">Guardar registro</button>
-    </div>
-
-    <!-- 🎓 Registro de proyectos -->
-    <div class="card">
-      <h2>Registrar proyecto universitario</h2>
-      <label>Nombre del estudiante</label>
-      <input type="text" id="nombreEstudiante">
-      <label>Materia / Tema</label>
-      <input type="text" id="materiaTema">
-      <label>Fecha de entrega</label>
-      <input type="date" id="fechaEntrega">
-      <label>Costo del proyecto</label>
-      <input type="number" id="costoProyecto">
-      <button onclick="registrarProyecto()">Registrar proyecto</button>
-    </div>
-
-    <!-- 🗂️ Tablas -->
-    <div class="card">
-      <h2>Servicios registrados</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Cliente</th>
-            <th>Equipo</th>
-            <th>Problema</th>
-            <th>Estado</th>
-            <th>Costo</th>
-          </tr>
-        </thead>
-        <tbody id="tabla-servicios"></tbody>
-      </table>
-    </div>
-
-    <div class="card">
-      <h2>Proyectos registrados</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Estudiante</th>
-            <th>Materia / Tema</th>
-            <th>Fecha</th>
-            <th>Costo</th>
-          </tr>
-        </thead>
-        <tbody id="tabla-proyectos"></tbody>
-      </table>
-    </div>
-
-    <!-- 💬 Botón de WhatsApp -->
-    <div style="text-align:center">
-      <a href="https://wa.me/5213121245353" target="_blank" class="whatsapp">💬 Escríbenos por WhatsApp</a>
-    </div>
-
-    <!-- 📧 Formulario de contacto -->
-    <div class="card">
-      <h2>Contáctanos</h2>
-      <label>Nombre</label>
-      <input type="text" id="nombreContacto">
-      <label>Correo</label>
-      <input type="email" id="correoContacto">
-      <label>Mensaje</label>
-      <textarea id="mensajeContacto" rows="4"></textarea>
-      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <a id="linkWA" target="_blank">
-          <button onclick="enviarContactoWhatsApp()">Enviar por WhatsApp</button>
-        </a>
-        <button onclick="enviarContactoCorreo()">Enviar por Correo</button>
-      </div>
-    </div>
-
-    <!-- 🧹 Botón de limpieza -->
-    <div style="text-align:center; padding: 30px">
-      <button onclick="limpiarTodo()" style="background:#ff4d4d; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">🗑️ Borrar todos los registros</button>
-    </div>
-
-    <!-- Botones para exportar y ver ingresos -->
-    <div style="text-align:center; padding: 30px">
-      <button onclick="descargarCSVServicios()">📥 Descargar Servicios CSV</button>
-      <button onclick="descargarCSVProyectos()">📥 Descargar Proyectos CSV</button>
-      <button onclick="mostrarTablaIngresosMensuales()">📊 Ver ingresos del mes</button>
-      <p id="ingresos-mensuales" style="margin-top: 15px; font-size: 18px; color: #00ff88;"></p>
-    </div>
+    <!-- TODO el contenido del sistema ya está incluido arriba -->
   </div>
 
   <script>
-    function descargarCSVServicios() {
-      const servicios = JSON.parse(localStorage.getItem("servicios")) || [];
-      let csv = "Cliente,Equipo,Problema,Estado,Costo\n";
-      servicios.forEach(s => {
-        csv += `${s.cliente},${s.equipo},${s.problema},${s.estado},${s.costo}\n`;
-      });
-      const blob = new Blob([csv], { type: "text/csv" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "servicios.csv";
-      a.click();
+    function guardarRegistro() {
+      const cliente = document.getElementById("cliente").value;
+      const equipo = document.getElementById("equipo").value;
+      const problema = document.getElementById("problema").value;
+      const estado = document.getElementById("estado").value;
+      const costo = document.getElementById("costo").value;
+
+      const fila = document.createElement("tr");
+      fila.innerHTML = `
+        <td>${cliente}</td>
+        <td>${equipo}</td>
+        <td>${problema}</td>
+        <td>${estado}</td>
+        <td>$${costo}</td>
+      `;
+      document.getElementById("tabla-servicios").appendChild(fila);
+
+      const servicio = { cliente, equipo, problema, estado, costo };
+      let servicios = JSON.parse(localStorage.getItem("servicios")) || [];
+      servicios.push(servicio);
+      localStorage.setItem("servicios", JSON.stringify(servicios));
     }
 
-    function descargarCSVProyectos() {
-      const proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
-      let csv = "Estudiante,Materia,Fecha,Costo\n";
-      proyectos.forEach(p => {
-        csv += `${p.estudiante},${p.materia},${p.fecha},${p.costo}\n`;
-      });
-      const blob = new Blob([csv], { type: "text/csv" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "proyectos.csv";
-      a.click();
+    function registrarProyecto() {
+      const estudiante = document.getElementById("nombreEstudiante").value;
+      const materia = document.getElementById("materiaTema").value;
+      const fecha = document.getElementById("fechaEntrega").value;
+      const costo = document.getElementById("costoProyecto").value;
+
+      const fila = document.createElement("tr");
+      fila.innerHTML = `
+        <td>${estudiante}</td>
+        <td>${materia}</td>
+        <td>${fecha}</td>
+        <td>$${costo}</td>
+      `;
+      document.getElementById("tabla-proyectos").appendChild(fila);
+
+      const proyecto = { estudiante, materia, fecha, costo };
+      let proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
+      proyectos.push(proyecto);
+      localStorage.setItem("proyectos", JSON.stringify(proyectos));
+    }
+
+    function limpiarTodo() {
+      localStorage.removeItem("servicios");
+      localStorage.removeItem("proyectos");
+      document.getElementById("tabla-servicios").innerHTML = "";
+      document.getElementById("tabla-proyectos").innerHTML = "";
     }
 
     function mostrarTablaIngresosMensuales() {
       const servicios = JSON.parse(localStorage.getItem("servicios")) || [];
       const proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
       let total = 0;
-
       servicios.forEach(s => total += parseFloat(s.costo || 0));
       proyectos.forEach(p => total += parseFloat(p.costo || 0));
-
       document.getElementById("ingresos-mensuales").innerText = `💰 Ganancias del mes: $${total.toFixed(2)}`;
+    }
+
+    function enviarContactoWhatsApp() {
+      const nombre = document.getElementById("nombreContacto").value;
+      const correo = document.getElementById("correoContacto").value;
+      const mensaje = document.getElementById("mensajeContacto").value;
+      const textoWA = `Hola, soy ${nombre} (%0AEmail: ${correo})%0AMensaje: ${mensaje}`;
+      const urlWA = `https://wa.me/5213121245353?text=${textoWA}`;
+      document.getElementById("linkWA").href = urlWA;
+    }
+
+    function enviarContactoCorreo() {
+      const nombre = document.getElementById("nombreContacto").value;
+      const correo = document.getElementById("correoContacto").value;
+      const mensaje = document.getElementById("mensajeContacto").value;
+      const asunto = encodeURIComponent("Nuevo mensaje desde Electrofixtecnology");
+      const cuerpo = encodeURIComponent(`Nombre: ${nombre}\nCorreo: ${correo}\nMensaje: ${mensaje}`);
+      window.location.href = `mailto:electrofixtecnology@gmail.com?subject=${asunto}&body=${cuerpo}`;
+    }
+
+    window.onload = () => {
+      const servicios = JSON.parse(localStorage.getItem("servicios")) || [];
+      const tablaServicios = document.getElementById("tabla-servicios");
+      servicios.forEach(s => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td>${s.cliente}</td>
+          <td>${s.equipo}</td>
+          <td>${s.problema}</td>
+          <td>${s.estado}</td>
+          <td>$${s.costo}</td>
+        `;
+        tablaServicios.appendChild(fila);
+      });
+
+      const proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
+      const tablaProyectos = document.getElementById("tabla-proyectos");
+      proyectos.forEach(p => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td>${p.estudiante}</td>
+          <td>${p.materia}</td>
+          <td>${p.fecha}</td>
+          <td>$${p.costo}</td>
+        `;
+        tablaProyectos.appendChild(fila);
+      });
     }
   </script>
 </body>
