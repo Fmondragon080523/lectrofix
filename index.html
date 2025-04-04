@@ -113,7 +113,122 @@
 
   <div class="container">
     <!-- CONTENIDO COMPLETO -->
-    <!-- TODO el contenido del sistema ya está incluido arriba -->
+    <!-- 🧾 Sección: Información del negocio -->
+    <div class="card">
+      <h2>Sobre Electrofixtecnology</h2>
+      <p>En Electrofixtecnology nos especializamos en brindar soluciones eficientes y personalizadas en mantenimiento y reparación de PC, consolas (PS4, PS5, Xbox SERIES) y controles 🎮.
+      Además, apoyamos a estudiantes con el desarrollo profesional de proyectos universitarios.
+      Nos enorgullece ofrecer un servicio rápido, accesible y de alta calidad, enfocado en la satisfacción de cada cliente.</p>
+    </div>
+
+    <!-- 📋 Registro de servicios -->
+    <div class="card">
+      <h2>Registrar nuevo cliente</h2>
+      <label>Nombre del cliente</label>
+      <input type="text" id="cliente">
+      <label>Tipo de equipo</label>
+      <select id="equipo">
+        <option>PC</option>
+        <option>Laptop</option>
+        <option>PS4</option>
+        <option>PS5</option>
+        <option>Control Xbox/Play</option>
+        <option>Otro</option>
+      </select>
+      <label>Descripción del problema</label>
+      <textarea id="problema"></textarea>
+      <label>Estado del servicio</label>
+      <select id="estado">
+        <option>Pendiente</option>
+        <option>En reparación</option>
+        <option>Terminado</option>
+        <option>Entregado</option>
+      </select>
+      <label>Costo estimado</label>
+      <input type="number" id="costo">
+      <button onclick="guardarRegistro()">Guardar registro</button>
+    </div>
+
+    <!-- 🎓 Registro de proyectos -->
+    <div class="card">
+      <h2>Registrar proyecto universitario</h2>
+      <label>Nombre del estudiante</label>
+      <input type="text" id="nombreEstudiante">
+      <label>Materia / Tema</label>
+      <input type="text" id="materiaTema">
+      <label>Fecha de entrega</label>
+      <input type="date" id="fechaEntrega">
+      <label>Costo del proyecto</label>
+      <input type="number" id="costoProyecto">
+      <button onclick="registrarProyecto()">Registrar proyecto</button>
+    </div>
+
+    <!-- 🗂️ Tablas -->
+    <div class="card">
+      <h2>Servicios registrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Equipo</th>
+            <th>Problema</th>
+            <th>Estado</th>
+            <th>Costo</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-servicios"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Proyectos registrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Estudiante</th>
+            <th>Materia / Tema</th>
+            <th>Fecha</th>
+            <th>Costo</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-proyectos"></tbody>
+      </table>
+    </div>
+
+    <!-- 💬 Botón de WhatsApp -->
+    <div style="text-align:center">
+      <a href="https://wa.me/5213121245353" target="_blank" class="whatsapp">💬 Escríbenos por WhatsApp</a>
+    </div>
+
+    <!-- 📧 Formulario de contacto -->
+    <div class="card">
+      <h2>Contáctanos</h2>
+      <label>Nombre</label>
+      <input type="text" id="nombreContacto">
+      <label>Correo</label>
+      <input type="email" id="correoContacto">
+      <label>Mensaje</label>
+      <textarea id="mensajeContacto" rows="4"></textarea>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a id="linkWA" target="_blank">
+          <button onclick="enviarContactoWhatsApp()">Enviar por WhatsApp</button>
+        </a>
+        <button onclick="enviarContactoCorreo()">Enviar por Correo</button>
+      </div>
+    </div>
+
+    <!-- 🧹 Botón de limpieza -->
+    <div style="text-align:center; padding: 30px">
+      <button onclick="limpiarTodo()" style="background:#ff4d4d; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">🗑️ Borrar todos los registros</button>
+    </div>
+
+    <!-- Botones para exportar y ver ingresos -->
+    <div style="text-align:center; padding: 30px">
+      <button onclick="descargarCSVServicios()">📥 Descargar Servicios CSV</button>
+      <button onclick="descargarCSVProyectos()">📥 Descargar Proyectos CSV</button>
+      <button onclick="mostrarTablaIngresosMensuales()">📊 Ver ingresos del mes</button>
+      <p id="ingresos-mensuales" style="margin-top: 15px; font-size: 18px; color: #00ff88;"></p>
+    </div>
   </div>
 
   <script>
